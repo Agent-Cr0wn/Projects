@@ -9,22 +9,23 @@ int main(void)
         n= get_int("Height: ");
     }
 
+    while (n < 1);
 
-while (n < 1);
-    if (n >=make mario
-     1)
-    {
-        break;
-    }
 
-    for (int i = 0; i < n; i++)
-    {
-        for(int j = 0; j < n; j++)
+        for (int i = 0; i < n; i++)
         {
-            printf("#");
+            for(int j = 0; j < n; j++)
+            {
+                printf("#");
+            }
+            printf("\n");
         }
-        printf("\n");
+
+    while(true)
+    {
+        if (n > 1)
+        {
+            break;
+        }
     }
-
-
 }
