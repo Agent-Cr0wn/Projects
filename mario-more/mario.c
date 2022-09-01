@@ -8,16 +8,9 @@ int main(void)
     {
         n= get_int("Height: ");
     }
-while (true)
-{
-    n = get_int("Height: ");
-    if(n > 1)
-    {
-        break;
-    }
-}
 
-while (n<1);
+
+while (n < 1);
 
     for (int i = 0; i < n; i++)
     {
