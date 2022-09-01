@@ -11,7 +11,8 @@ int main(void)
 
 
 while (n < 1);
-    if (n > 1)
+    if (n >=make mario
+     1)
     {
         break;
     }
