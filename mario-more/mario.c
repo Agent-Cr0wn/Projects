@@ -11,7 +11,7 @@ int main(void)
 
 
 while (n < 1);
-    if(n > 1)
+    if (n > 1)
     {
         break;
     }
