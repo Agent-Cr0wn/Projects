@@ -23,7 +23,7 @@ while (n<1);
 
 while (true)
 {
-    n = get_int("Hight: ")
+    n = get_int("Height: ")
     if(n>1)
 }
 
