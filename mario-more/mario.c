@@ -11,6 +11,10 @@ int main(void)
 
 
 while (n < 1);
+    if(n > 1)
+    {
+        break;
+    }
 
     for (int i = 0; i < n; i++)
     {
@@ -20,15 +24,6 @@ while (n < 1);
         }
         printf("\n");
     }
-
-while (true)
-{
-    n = get_int("Height: ");
-    if(n > 1)
-    {
-        break;
-    }
-}
 
 
 }
