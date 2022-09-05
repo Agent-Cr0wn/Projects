@@ -10,5 +10,8 @@ int main(void)
     }
     while(height < 1 || height > 8);
 
-    for(row = 0; row < height; row++)
+    for(row = 0; row < height; row++);
+    {
+        printf("")
+    }
 }
