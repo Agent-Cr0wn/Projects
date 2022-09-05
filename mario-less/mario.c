@@ -3,8 +3,12 @@
 
 int main(void)
 {
+    int height;
     do
     {
-        height = getint("Height?")
+        height = getint("Height?");
     }
+    while(height < 1 || height > 8);
+
+    for(row = 0; row < height; row++)
 }
