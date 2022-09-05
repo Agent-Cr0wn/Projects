@@ -2,6 +2,6 @@
 
 int main(void)
 {
-    
-    printf("Hello, world\n");
+    ask = get_string("What is your name? ");
+    printf("Hello, ask\n");
 }
