@@ -13,7 +13,7 @@
     "tomoki1207.pdf", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:f7af315eabeca991c142fee67acfe693fa7cad22", 
+  "image": "ghcr.io/cs50/codespace:7eefdf4e10c96fc5cf17f5ffc11b4ef3cc4668bf", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 
@@ -31,7 +31,7 @@
     "editor.guides.indentation": false, 
     "editor.hover.enabled": false, 
     "editor.lightbulb.enabled": false, 
-    "editor.matchBrackets": "near", 
+    "editor.matchBrackets": "never", 
     "editor.minimap.enabled": false, 
     "editor.occurrencesHighlight": false, 
     "editor.parameterHints.enabled": false, 
@@ -41,18 +41,17 @@
       "strings": "off"
     }, 
     "editor.renderWhitespace": "selection", 
+    "editor.scrollbar.verticalScrollbarSize": 0, 
     "editor.selectionHighlight": false, 
     "editor.semanticTokenColorCustomizations": {
-      "[Default Dark+]": {
-        "enabled": true, 
+      "[GitHub Dark Default]": {
         "rules": {
-          "type": "#569CD6"
+          "type": "#FF7E76"
         }
       }, 
-      "[Default Light+]": {
-        "enabled": true, 
+      "[GitHub Light Default]": {
         "rules": {
-          "type": "#0000FF"
+          "type": "#D2343F"
         }
       }
     }, 
@@ -76,43 +75,20 @@
     }, 
     "git.autofetch": true, 
     "git.decorations.enabled": false, 
+    "git.terminalAuthentication": true, 
     "gitdoc.autoPull": "off", 
     "gitdoc.commitMessageFormat": "ccc, LLL d, kkkk, h:mm a ZZ", 
     "gitdoc.commitValidationLevel": "none", 
     "gitdoc.enabled": true, 
     "gitdoc.pullOnOpen": false, 
+    "github.gitAuthentication": true, 
     "html.suggest.html5": false, 
     "javascript.suggest.enabled": false, 
     "javascript.validate.enable": false, 
     "presentation-mode.active": {
       "commands": [
         "workbench.action.closeSidebar"
-      ], 
-      "editor.matchBrackets": "never", 
-      "editor.minimap.enabled": false, 
-      "editor.scrollbar.verticalScrollbarSize": 0, 
-      "workbench.activityBar.visible": false, 
-      "workbench.colorCustomizations": {
-        "[GitHub Dark Default]": {
-          "activityBar.background": "#000", 
-          "editor.background": "#000", 
-          "editor.lineHighlightBackground": "#0000", 
-          "editor.lineHighlightBorder": "#0000", 
-          "panel.background": "#000", 
-          "sideBar.background": "#000", 
-          "terminal.background": "#000"
-        }, 
-        "[GitHub Light Default]": {
-          "activityBar.background": "#fff", 
-          "editor.background": "#fff", 
-          "editor.lineHighlightBackground": "#fff0", 
-          "editor.lineHighlightBorder": "#fff0", 
-          "panel.background": "#fff", 
-          "sideBar.background": "#fff", 
-          "terminal.background": "#fff"
-        }
-      }, 
-      "workbench.statusBar.visible": false
+      ]
     }, 
     "presentation-mode.inactive": {
       "commands": [
@@ -146,8 +122,27 @@
     "terminal.integrated.tabs.showActiveTerminal": "never", 
     "window.autoDetectColorScheme": true, 
     "workbench.colorCustomizations": {
+      "[GitHub Dark Default]": {
+        "activityBar.background": "#000", 
+        "editor.background": "#000", 
+        "editor.lineHighlightBackground": "#0000", 
+        "editor.lineHighlightBorder": "#0000", 
+        "editorWhitespace.foreground": "#59A5FC", 
+        "panel.background": "#000", 
+        "sideBar.background": "#000", 
+        "terminal.background": "#000", 
+        "terminal.foreground": "#fff"
+      }, 
       "[GitHub Light Default]": {
-        "terminal.foreground": "#000000"
+        "activityBar.background": "#fff", 
+        "editor.background": "#fff", 
+        "editor.lineHighlightBackground": "#fff0", 
+        "editor.lineHighlightBorder": "#fff0", 
+        "editorWhitespace.foreground": "#1167D7", 
+        "panel.background": "#fff", 
+        "sideBar.background": "#fff", 
+        "terminal.background": "#fff", 
+        "terminal.foreground": "#000"
       }, 
       "editor.lineHighlightBorder": "#0000", 
       "editorError.foreground": "#0000", 
@@ -159,8 +154,8 @@
     "workbench.editor.closeOnFileDelete": true, 
     "workbench.editor.untitled.hint": "hidden", 
     "workbench.iconTheme": "vs-minimal", 
-    "workbench.preferredDarkColorTheme": "Default Dark+", 
-    "workbench.preferredLightColorTheme": "Default Light+", 
+    "workbench.preferredDarkColorTheme": "GitHub Dark Default", 
+    "workbench.preferredLightColorTheme": "GitHub Light Default", 
     "workbench.startupEditor": "none", 
     "workbench.statusBar.visible": false, 
     "workbench.tips.enabled": false, 
