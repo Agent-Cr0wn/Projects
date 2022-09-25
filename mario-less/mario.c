@@ -3,14 +3,14 @@
 
 int main(void)
 {
-    int height, i, j, space;                                                //declare integers
+    int height, i, j, space;
     do
     {
-        height = get_int("Height?");                                        //request height via input
+        height = get_int("Height?");                                        //request height via input.
     }
-    while(height < 1 || height > 8);                                        //only accept input between 1 and 8
+    while(height < 1 || height > 8);                                        //only accept input between 1 and 8.
 
-    for(i = 0; i < height; i++)                                             
+    for(i = 0; i < height; i++)
     {
         for(space = 0; space < height - i - 1; space++)
         {
@@ -20,6 +20,6 @@ int main(void)
         {
             printf("#");
         }
-        printf("\n");
+        printf("\n");                                                       //print new line as long as "i" less than height input.
     }
 }
