@@ -42,7 +42,7 @@ int get_cents(void)
     {
         cents = get_int("Cents Owed? ");                        //get input from user
     }
-    while (cents < 0);                                          //
+    while (cents < 0);                                          //as long as the user input is more than 0
     return cents;
 }
 
