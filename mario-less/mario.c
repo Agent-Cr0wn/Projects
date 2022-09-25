@@ -13,7 +13,7 @@ int main(void)
     for(i = 0; i < height; i++)
     {
         for(space = 0; space < height - i - 1; space++)
-        {                                                                   //print a "space" 
+        {                                                                   //print a "space" before the "#"
             printf(" ");
         }
         for(j = 0; j <= i; j++)
