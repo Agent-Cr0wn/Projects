@@ -48,7 +48,8 @@ int get_cents(void)
 
 int calculate_quarters(int cents)
 {
-    int quaters = 0;                                            //calculate how much 25 can be decreased from user input
+    int quaters = 0;
+    //calculate how much 25 can be decreased from user input
     while (cents >= 25)
     {
         cents = cents - 25;
@@ -59,7 +60,8 @@ int calculate_quarters(int cents)
 
 int calculate_dimes(int cents)
 {
-    int dimes = 0;                                              //calculate how much 10 can be decreased from user input after quater calculation
+    int dimes = 0;
+    //calculate how much 10 can be decreased from user input after quater calculation
     while (cents >= 10)
     {
         cents = cents - 10;
@@ -70,7 +72,8 @@ int calculate_dimes(int cents)
 
 int calculate_nickels(int cents)
 {
-    int nickels = 0;                                            //calculate how much 5 can be decreased from user input after dimes calculation
+    int nickels = 0;
+    //calculate how much 5 can be decreased from user input after dimes calculation
     while (cents >= 5)
     {
         cents = cents - 5;
@@ -81,7 +84,9 @@ int calculate_nickels(int cents)
 
 int calculate_pennies(int cents)
 {
-    int pennies = 0;                                            //calculate how much 1 can be decreased from user input after quater nickels
+
+    int pennies = 0;
+    //calculate how much 1 can be decreased from user input after quater nickels
     while (cents >= 1)
     {
         cents = cents - 1;
