@@ -13,12 +13,12 @@ int main(void)
     for(i = 0; i < height; i++)
     {
         for(space = 0; space < height - i - 1; space++)
-        {
+        {                                                                   //
             printf(" ");
         }
-        for(j = 0; j <= i; j++)                                             
+        for(j = 0; j <= i; j++)
         {
-            printf("#");
+            printf("#");                                                    //print "#" in each line equal to number of new lines requested from input
         }
     printf("\n");                                                           //print new line as long as "i" less than height input.
     }
