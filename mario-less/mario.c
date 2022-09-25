@@ -8,15 +8,15 @@ int main(void)
     {
         height = get_int("Height? ");                                               //request height via input.
     }
-    while(height < 1 || height > 8);                                                //only accept input between 1 and 8.
+    while (height < 1 || height > 8);                                               //only accept input between 1 and 8.
 
-    for(i = 0; i < height; i++)
+    for (i = 0; i < height; i++)
     {
-        for(space = 0; space < height - i - 1; space++)
-        {                                                                           //print a "space" before the "#"
-            printf(" ");
+        for (space = 0; space < height - i - 1; space++)
+        {
+            printf(" ");                                                            //print a "space" before the "#"
         }
-        for(j = 0; j <= i; j++)
+        for (j = 0; j <= i; j++)
         {
             printf("#");                                                            //print "#" in each line equal to number of new lines requested from input
         }
