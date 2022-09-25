@@ -3,20 +3,20 @@
 
 int main(void)
 {
-    int height, x, y, space;
+    int height, i, j, space;                                                //declare integers
     do
     {
-        height = get_int("Height?");
+        height = get_int("Height?");                                        //request height via input
     }
-    while(height < 1 || height > 8);
+    while(height < 1 || height > 8);                                        //only accept input between 1 and 8
 
-    for(x = 0; x < height; x++)
+    for(i = 0; i < height; i++)                                             //
     {
-        for(space = 0; space < height - x - 1; space++)
+        for(space = 0; space < height - i - 1; space++)
         {
             printf(" ");
         }
-        for(y = 0; y <= x; y++)
+        for(j = 0; j <= i; j++)
         {
             printf("#");
         }
