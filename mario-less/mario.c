@@ -20,6 +20,6 @@ int main(void)
         {
             printf("#");
         }
-        printf("\n");                                                       //print new line as long as "i" less than height input.
+    printf("\n");                                                       //print new line as long as "i" less than height input.
     }
 }
