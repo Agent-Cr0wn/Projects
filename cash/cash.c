@@ -42,14 +42,14 @@ int get_cents(void)
     {
         cents = get_int("Cents Owed? ");                        //get input from user
     }
-    while (cents < 0);                                          //as long as the user input is more than 0
+    while (cents < 0);                                          //execute as long as the user input is more than 0
     return cents;
 }
 
 int calculate_quarters(int cents)
 {
     int quaters = 0;
-    while (cents >= 25)
+    while (cents >= 25)                                         //calculate how much 25 can be decreased from user input
     {
         cents = cents - 25;
         quaters++;
@@ -60,7 +60,7 @@ int calculate_quarters(int cents)
 int calculate_dimes(int cents)
 {
     int dimes = 0;
-    while (cents >= 10)
+    while (cents >= 10)                                         //calculate how much 10 can be decreased from user input after quater calculation
     {
         cents = cents - 10;
         dimes++;
@@ -71,7 +71,7 @@ int calculate_dimes(int cents)
 int calculate_nickels(int cents)
 {
     int nickels = 0;
-    while (cents >= 5)
+    while (cents >= 5)                                           //calculate how much 5 can be decreased from user input after dimes calculation
     {
         cents = cents - 5;
         nickels++;
@@ -82,7 +82,7 @@ int calculate_nickels(int cents)
 int calculate_pennies(int cents)
 {
     int pennies = 0;
-    while (cents >= 1)
+    while (cents >= 1)                                            //calculate how much 1 can be decreased from user input after quater nickels
     {
         cents = cents - 1;
         pennies++;
