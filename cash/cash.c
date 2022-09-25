@@ -86,7 +86,7 @@ int calculate_pennies(int cents)
 {
 
     int pennies = 0;
-    //calculate how much 1 can be decreased from user input after quater nickels
+    //calculate how much 1 can be decreased from user input after nickels calculation
     while (cents >= 1)
     {
         cents = cents - 1;
