@@ -10,7 +10,7 @@ int main(void)
     }
     while(height < 1 || height > 8);                                        //only accept input between 1 and 8
 
-    for(i = 0; i < height; i++)                                             //
+    for(i = 0; i < height; i++)                                             
     {
         for(space = 0; space < height - i - 1; space++)
         {
