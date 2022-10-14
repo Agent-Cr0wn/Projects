@@ -28,6 +28,14 @@ int main(int argc, string argv[])
 
     for (int j = 0; j < strlen(plaintext); j++)
     {
-        printf(("%c", plaintext[j] - 65 +k ) % 26 + 65);
+        if (isupper(plaintext[j]))
+        {
+            printf(("%c", plaintext[j] - 65 + k) % 26 + 65);
+        }
+
+        else if (islower(plaintext[j]))
+        {
+            printf(("%c", plaintext[j] - 97 + k) % 26 + 97);
+        }
     }
 }
