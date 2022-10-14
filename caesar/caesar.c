@@ -23,21 +23,25 @@ int main(int argc, string argv[])
 
     int k = atoi(argv[1]);
 
+        // Get input from user
     string plaintext = get_string("plaintext: ");
     printf("Ciphertext: ");
 
     for (int j = 0; j < strlen(plaintext); j++)
     {
+            // Check if input is uppercase
         if (isupper(plaintext[j]))
         {
             printf("%c", (plaintext[j] - 65 + k) % 26 + 65);
         }
 
+            // Check if input is lowercase
         else if (islower(plaintext[j]))
         {
             printf("%c", (plaintext[j] - 97 + k) % 26 + 97);
         }
 
+            // Return the same number as input given
         else
         {
             printf("%c", plaintext[j]);
