@@ -21,5 +21,8 @@ int main(int argc, string argv[])
         }
     }
 
+    int k = atoi(argv[1]);
 
+    string plaintext = get_string("plaintext: ");
+    printf("Ciphertext: ")
 }
