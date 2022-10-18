@@ -28,8 +28,8 @@ int main(void)
         }
 
     }
-    float L = letters / words * 100
-    float S = sentences / words * 100
+    float L = letters / (float)words * 100
+    float S = sentences / (float)words * 100
 
     int index = round(0.0588)
 
