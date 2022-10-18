@@ -6,6 +6,7 @@
 
 int main(void)
 {
+    // Get User input
     string text = get_string("Text: ");
 
     int letters = 0;
