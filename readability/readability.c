@@ -1,3 +1,4 @@
+#include <math.h>
 #include <ctype.h>
 #include <cs50.h>
 #include <stdio.h>
@@ -25,6 +26,11 @@ int main(void)
         {
             sentences++;
         }
-        
+
     }
+    float L = letters / words * 100
+    float S = sentences / words * 100
+
+    int index = round(0.0588)
+
 }
