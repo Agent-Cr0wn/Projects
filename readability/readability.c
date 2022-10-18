@@ -27,7 +27,7 @@ int main(void)
             words++;
         }
 
-        // Check if input ends with a 
+        // Check if input ends with a bang / interrobang
         else if (text[i] == '.' || text[i] == '?' || text[i] == '!')
         {
             sentences++;
