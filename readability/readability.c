@@ -34,11 +34,13 @@ int main(void)
         }
 
     }
+    // Calculate input value
     float L = letters / (float)words * 100;
     float S = sentences / (float)words * 100;
 
     int index = round(0.0588 * L - 0.296 * S - 15.8);
 
+    // If the input value is less than 1, return
     if (index < 1)
     {
         printf("Before Grade 1\n");
