@@ -15,16 +15,19 @@ int main(void)
 
     for (int i = 0; i < strlen(text); i++)
     {
-        //
+        // Check if input characters have alphabetical value
         if (isalpha(text[i]))
         {
             letters++;
         }
 
+        // Check if input has any spaces
         else if (text[i] == ' ')
         {
             words++;
         }
+
+        // Check if input ends with a 
         else if (text[i] == '.' || text[i] == '?' || text[i] == '!')
         {
             sentences++;
