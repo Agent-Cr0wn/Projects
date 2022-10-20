@@ -31,7 +31,7 @@ int main(int argc, string argv[])
     {
         // Check if input is uppercase
         if (isupper(plaintext[j]))
-        {`
+        {
             //
             printf("%c", (plaintext[j] - 65 + k) % 26 + 65);
         }
