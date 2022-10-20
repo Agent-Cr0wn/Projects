@@ -40,12 +40,13 @@ int main(void)
 
     int index = round(0.0588 * L - 0.296 * S - 15.8);
 
-    // If the input value is less than 1, return
+    // If the input value is less than 1, display "before grade 1"
     if (index < 1)
     {
         printf("Before Grade 1\n");
     }
 
+    // If the input value is larger than 16, display "grade 16+"
     else if (index > 16)
     {
         printf("Grade 16+\n");
