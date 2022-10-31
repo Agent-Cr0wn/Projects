@@ -8,9 +8,23 @@ int main(int argc, char *argv[])
     BYTE buffer [512];
     int bytes_read, count = 0;
     char filename[8];
-    FILE *img = NULL;
+
     // Open memory card
     FILE *f = fopen(argv[1], "r");
+    FILE *img = NULL;
+
+    if (argc != 2)
+    {
+        printf("Usage: ./recover IMAGE");
+        return 1;
+    }
+
+    If(f == NULL)
+    {
+        printf("./recover card.raw");
+        return 1;
+    }
+
     // Repeat until the end of the card
     while(1)
     {
