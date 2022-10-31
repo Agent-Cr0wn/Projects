@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
                 count++;
             }
         }
-        else
+        else if(count != 0)
         {
             fwrite(buffer, sizeof(BYTE), bytes_read, img);
             if(bytes_read == 0)
