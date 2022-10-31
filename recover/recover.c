@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     }
 
     // Repeat until the end of the card
-    while(1)
+    while(true)
     {
     // Read 512 bytes into a buffer
         bytes_read = fread(buffer, sizeof(BYTE), 512, f);
