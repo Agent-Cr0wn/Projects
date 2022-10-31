@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
                 fwrite(buffer, sizeof(BYTE), bytes_read, img);
                 count++;
             }
-    
+    // Else close the file and open a new file to write to
             else
             {
                 fclose(img);
