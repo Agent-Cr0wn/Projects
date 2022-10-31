@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     }
 
     // Repeat until the end of the card
-    while(true)
+    while (true)
     {
     // Read 512 bytes into a buffer
         bytes_read = fread(buffer, sizeof(BYTE), 512, f);
@@ -50,14 +50,15 @@ int main(int argc, char *argv[])
                 count++;
             }
         }
-        else if(count != 0)
+    //Else if already found JPEG, keep writing to it
+        else if (count != 0)
         {
             fwrite(buffer, sizeof(BYTE), bytes_read, img);
-            if(bytes_read == 0)
+            if (bytes_read == 0)
             {
                 fclose(img);
                 fclose(f);
-                break;
+                return 0;
             }
         }
     }
