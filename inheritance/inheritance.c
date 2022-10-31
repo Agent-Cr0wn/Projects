@@ -80,6 +80,7 @@ void free_family(person *p)
     // Handle base case
     if (p == NULL)
     {
+        free(p)
         return;
     }
 
