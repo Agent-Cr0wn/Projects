@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
     // Repeat until the end of the card
     while (true)
     {
-    // Read 512 bytes into a buffer
+        // Read 512 bytes into a buffer
         bytes_read = fread(buffer, sizeof(BYTE), 512, f);
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
-    // If first JPEG then create file and write
+            // If first JPEG then create file and write
             if (count == 0)
             {
                 sprintf(filename, "%03i.jpg", count);
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
                 fwrite(buffer, sizeof(BYTE), bytes_read, img);
                 count++;
             }
-    // Else close the file and open a new file to write to
+            // Else close the file and open a new file to write to
             else
             {
                 fclose(img);
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
                 count++;
             }
         }
-    //Else if already found JPEG, keep writing to it
+        //Else if already found JPEG, keep writing to it
         else if (count != 0)
         {
             fwrite(buffer, sizeof(BYTE), bytes_read, img);
