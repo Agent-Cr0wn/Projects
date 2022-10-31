@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    If(f == NULL)
+    if (f == NULL)
     {
         printf("./recover card.raw");
         return 1;
