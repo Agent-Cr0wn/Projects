@@ -50,12 +50,12 @@ person *create_family(int generations)
         person *parent1 = create_family(generations - 1);
 
         // Set parent pointers for current person
-        p->parents[0] = parent0;
-        p->parents[1] = parent1;
+        p->parent[0] = parent0;
+        p->parent[1] = parent1;
 
         // Randomly assign current person's alleles based on the alleles of their parents
-        p->alleles[0] = parents0->alleles[rand()%2];
-        p->alleles[1] = parents1->alleles[rand()%2];
+        p->alleles[0] = parent0->alleles[rand()%2];
+        p->alleles[1] = parent1->alleles[rand()%2];
 
     }
 
@@ -63,8 +63,8 @@ person *create_family(int generations)
     else
     {
         // Set parent pointers to NULL
-        p->parents[0] = NULL;
-        p->parents[1] = NULL;
+        p->parent[0] = NULL;
+        p->parent[1] = NULL;
         // Randomly assign alleles
         p->alleles[0] = random alleles();
         p->alleles[0] = random alleles();
@@ -84,8 +84,8 @@ void free_family(person *p)
     }
 
     // Free parents recursively
-    free_family(p->parents[0]);
-    free_family(p->parents[1]);
+    free_family(p->parent[0]);
+    free_family(p->parent[1]);
 
     // Free child
     free(p);
