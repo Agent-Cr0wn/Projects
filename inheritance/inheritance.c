@@ -84,12 +84,8 @@ void free_family(person *p)
     }
 
     // Free parents recursively
-    if(p->parents)
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            free_family(p->parents[i]);
-        }
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
 
     // Free child
     free(p);
