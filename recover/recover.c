@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
     BYTE buffer [512];
     int bytes_read, counter = 0;
     char filename[8];
+    FILE *img = NULL;
     // Open memory card
     FILE *f = fopen(argv[1], "r");
     // Repeat until the end of the card
@@ -19,8 +20,29 @@ int main(int argc, char *argv[])
     // If first JPEG then create file and write
             if(counter == 0)
             {
+                sprintf(filename, "%03i.jpg", count);
+                img = fopen(filename, "w");
+                fwrite(buffer, sizeof(BYTE), bytes_read, img);
+                count++;
+            }
 
-                sprintf(filename, "%03i.jpg", 2, count);
+            else
+            {
+                fclose(filename);
+                sprintf(filename, "%03i.jpg", count);
+                img = fopen(filename, "w");
+                fwrite(buffer , sizeof(BYTE), bytesread, img):
+                count++;
+            }
+        }
+        else
+        {
+            fwrite(buffer, sizeof(BYTE), bytes_read, img);
+            if(bytes_read == 0)
+            {
+                fclose(img);
+                fclose(f):
+                break;
             }
         }
     }
