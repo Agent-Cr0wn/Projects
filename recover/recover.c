@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
     // If first JPEG then create file and write
-            if(counter == 0)
+            if(count == 0)
             {
                 sprintf(filename, "%03i.jpg", count);
                 img = fopen(filename, "w");
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
                 fclose(img);
                 sprintf(filename, "%03i.jpg", count);
                 img = fopen(filename, "w");
-                fwrite(buffer , sizeof(BYTE), bytesread, img):
+                fwrite(buffer , sizeof(BYTE), bytes_read, img);
                 count++;
             }
         }
@@ -42,17 +42,11 @@ int main(int argc, char *argv[])
             if(bytes_read == 0)
             {
                 fclose(img);
-                fclose(f):
+                fclose(f);
                 break;
             }
         }
     }
-
-
-
-
-
-
-
-
+    fclose(img);
+    fclose(f);
 }
