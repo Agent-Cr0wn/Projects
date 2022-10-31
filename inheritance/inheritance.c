@@ -82,7 +82,7 @@ void free_family(person *p)
     // Handle base case
     if (p == NULL)
     {
-        free(p);
+        return;
     }
 
     // Free parents recursively
@@ -91,7 +91,7 @@ void free_family(person *p)
 
     // Free child
     free(p);
-    
+
 }
 
 // Print each family member and their alleles.
