@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,13 +6,13 @@ int main(int argc, char *argv[])
 {
     typedef uint8_t BYTE;
     BYTE buffer [512];
-    int bytes_read, counter = 0;
+    int bytes_read, count = 0;
     char filename[8];
     FILE *img = NULL;
     // Open memory card
     FILE *f = fopen(argv[1], "r");
     // Repeat until the end of the card
-    while(true)
+    while(1)
     {
     // Read 512 bytes into a buffer
         bytes_read = fread(buffer, sizeof(BYTE), 512, f);
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
 
             else
             {
-                fclose(filename);
+                fclose(img);
                 sprintf(filename, "%03i.jpg", count);
                 img = fopen(filename, "w");
                 fwrite(buffer , sizeof(BYTE), bytesread, img):
