@@ -1,9 +1,11 @@
-from cs50 import get_int
+from cs50 import get_float
 
 while True:
-    cents= get_int("Cents Owed? ")
+    cents= get_float("Cents Owed? ")
     if cents > 0:
         break
+
+cents = round(cents*100)
 
 count = 0
 
