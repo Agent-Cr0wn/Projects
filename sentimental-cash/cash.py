@@ -11,7 +11,7 @@ count = 0
 
 # Quarters
 while cents >= 25:
-    cents = cents - 15
+    cents = cents - 25
     count += 1
 
 # Dimes
