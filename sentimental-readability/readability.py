@@ -6,6 +6,8 @@ int letters = 0
 int words = 1
 int sentences = 0
 
-for i in range(len)
+for i in range(len(text[i])):
+    
+
 
 
