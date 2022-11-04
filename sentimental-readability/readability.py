@@ -7,7 +7,7 @@ int words = 1
 int sentences = 0
 
 for i in range(len(text[i])):
-    
+    if isalpha(text[i])
 
 
 
