@@ -2,12 +2,16 @@ from cs50 import get_string
 
 text = get_string("Text: ")
 
-int letters = 0
-int words = 1
-int sentences = 0
+letters = 0
+words = 1
+sentences = 0
 
 for i in range(len(text[i])):
-    if text = text.isalpha()
+    if text[i] == text.isalpha():
+        letters++
+    elif text[i] == " ":
+        words++
+
 
 
 
