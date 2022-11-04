@@ -6,6 +6,6 @@ int letters = 0
 int words = 1
 int sentences = 0
 
-for (int i = )
+for i in range(len)
 
 
