@@ -91,7 +91,7 @@ bool load(const char *dictionary)
         countWord += 1;
     }
     // Close file
-    fclose(DictFile);
+    fclose(Dictfile);
     return true;
 }
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -106,7 +106,7 @@ void freenode(node *n)
     {
         freenode(n -> next);
     }
-    free(n):
+    free(n);
 }
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
