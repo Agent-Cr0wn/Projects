@@ -101,6 +101,15 @@ unsigned int size(void)
     return countWord;
 }
 
+void freenode(node *n)
+{
+    if (n -> next != NULL)
+    {
+        freenode(n -> next);
+    }
+    free(n):
+}
+
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
