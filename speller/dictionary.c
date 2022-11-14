@@ -87,14 +87,13 @@ bool load(const char *dictionary)
         }
         // Point header to temp
         table[hashNum] = temp;
-        countWord += 1;
 
+        countWord += 1;
     }
     // Close file
     fclose(DictFile);
     return true;
 }
-
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
@@ -109,7 +108,6 @@ void freenode(node *n)
     }
     free(n):
 }
-
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
