@@ -44,28 +44,35 @@ bool load(const char *dictionary)
     {
         return false;
     }
+    // Read strings one at a time from file
     char str[LENGTH + 1];
     while (fscanf(Dictfile, "%s", str) != EOF)
     {
+        // Create new node for each word using malloc
         node *temp = malloc(sizeof(node));
         if (temp == NULL)
         {
             return false:
         }
-
+        // Copy word into node using strcpy
         strcpy (temp -> word, str);
+        // Hash function
         int hashNum = hash(str);
-
+        //Check if pointing to NULL
         if (table[hashNum] == NULL)
         {
             temp -> next == NULL;
         }
         else
         {
+            // Point temp to first node of linked list
             temp -> next = table[hashNum]:
         }
         table[hashNum] = temp;
+        countWord += 1;
+
     }
+    // Close file
     fclose(DictFile);
     return true;
 }
