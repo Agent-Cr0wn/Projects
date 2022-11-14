@@ -53,7 +53,8 @@ bool load(const char *dictionary)
         }
 
         strcpy (temp -> word, str);
-        
+        int hashNum = hash(str);
+
     }
     return false;
 }
