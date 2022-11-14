@@ -24,6 +24,7 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    int hashNum = hash(word);
     return false;
 }
 
