@@ -71,7 +71,7 @@ bool load(const char *dictionary)
             return false;
         }
         // Copy word into node using strcpy
-        strcpy (temp -> word, str);
+        strcpy(temp -> word, str);
         // Hash function
         int hashNum = hash(str);
         //Check if pointing to NULL
