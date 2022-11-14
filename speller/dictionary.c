@@ -61,6 +61,7 @@ bool load(const char *dictionary)
         //Check if pointing to NULL
         if (table[hashNum] == NULL)
         {
+            // Point temp to NULL
             temp -> next == NULL;
         }
         else
@@ -68,6 +69,7 @@ bool load(const char *dictionary)
             // Point temp to first node of linked list
             temp -> next = table[hashNum]:
         }
+        // Point header to temp
         table[hashNum] = temp;
         countWord += 1;
 
@@ -81,7 +83,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return countWord;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
