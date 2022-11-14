@@ -68,7 +68,7 @@ bool load(const char *dictionary)
         node *temp = malloc(sizeof(node));
         if (temp == NULL)
         {
-            return false:
+            return false;
         }
         // Copy word into node using strcpy
         strcpy (temp -> word, str);
@@ -78,12 +78,12 @@ bool load(const char *dictionary)
         if (table[hashNum] == NULL)
         {
             // Point temp to NULL
-            temp -> next == NULL;
+            temp -> next = NULL;
         }
         else
         {
             // Point temp to first node of linked list
-            temp -> next = table[hashNum]:
+            temp -> next = table[hashNum];
         }
         // Point header to temp
         table[hashNum] = temp;
