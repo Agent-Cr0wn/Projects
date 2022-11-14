@@ -43,6 +43,8 @@ bool load(const char *dictionary)
     {
         return false;
     }
+    char str[LENGTH + 1];
+    while (fscanf(Dictfile, "%s", str))
     return false;
 }
 
