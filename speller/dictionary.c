@@ -23,8 +23,20 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
     int hashNum = hash(word);
+    // Create cursor
+    node *cursor = table[hashNum];
+    // Loop untel end of linked lists
+    while (cursor != NULL)
+    {
+        // Check if words are the same
+        if (strcasecmp(cursor -> word, word) == 0)
+        {
+            return true;
+        }
+
+        cursor = cursor -> next;
+    }
     return false;
 }
 
@@ -83,7 +95,6 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
     return countWord;
 }
 
