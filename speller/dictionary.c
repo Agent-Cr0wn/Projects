@@ -15,6 +15,7 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
+const unsigned int countWord = 0;
 
 // Hash table
 node *table[N];
@@ -54,10 +55,19 @@ bool load(const char *dictionary)
 
         strcpy (temp -> word, str);
         int hashNum = hash(str);
-        
 
+        if (table[hashNum] == NULL)
+        {
+            temp -> next == NULL;
+        }
+        else
+        {
+            temp -> next = table[hashNum]:
+        }
+        table[hashNum] = temp;
     }
-    return false;
+    fclose(DictFile);
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
