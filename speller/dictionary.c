@@ -1,5 +1,8 @@
 // Implements a dictionary's functionality
-
+#include <stdio.h>
+#include <strings.h>
+#include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
 
@@ -101,7 +104,6 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
     for (int i = 0; i < N; i++)
     {
         if (table[i] != NULL)
