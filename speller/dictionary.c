@@ -51,6 +51,9 @@ bool load(const char *dictionary)
         {
             return false:
         }
+
+        strcpy (temp -> word, str);
+        
     }
     return false;
 }
