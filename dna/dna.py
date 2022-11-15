@@ -4,15 +4,16 @@ import sys
 
 def main():
 
-    # TODO: Check for command-line usage
-
-    # TODO: Read database file into a variable
+    # Check for command-line usage
     
-    # TODO: Read DNA sequence file into a variable
 
-    # TODO: Find longest match of each STR in DNA sequence
+    # Read database file into a variable
 
-    # TODO: Check database for matching profiles
+    # Read DNA sequence file into a variable
+
+    # Find longest match of each STR in DNA sequence
+
+    # Check database for matching profiles
 
     return
 
@@ -43,11 +44,11 @@ def longest_match(sequence, subsequence):
             # If there is a match in the substring
             if sequence[start:end] == subsequence:
                 count += 1
-            
+
             # If there is no match in the substring
             else:
                 break
-        
+
         # Update most consecutive matches found
         longest_run = max(longest_run, count)
 
