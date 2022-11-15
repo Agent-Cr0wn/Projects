@@ -1,7 +1,7 @@
 from cs50 import get_float
 
 while True:
-    cents= get_float("Cents Owed? ")
+    cents = get_float("Cents Owed? ")
     if cents > 0:
         break
 
