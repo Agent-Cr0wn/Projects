@@ -20,8 +20,22 @@ def main():
         dna_sequence = file.read()
 
     # Find longest match of each STR in DNA sequence
-    
+    subsequences = lsit(database[0].keys())[1:]
+    results = {}
+    for subsequence in subsequences:
+        result[subsequence] = longest_match(dna_sequence, subsequence)
+
     # Check database for matching profiles
+    for person in database:
+        match = 0
+        for subsequence in subsequences:
+            if int(person[subsequence]) == result[subsequence]:
+                match += 1
+        
+        if match == len(subsequences):
+            print(person["name"])
+            return
+    print("No Match found!")
 
     return
 
