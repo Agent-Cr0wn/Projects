@@ -23,7 +23,7 @@ def main():
     subsequences = list(database[0].keys())[1:]
     results = {}
     for subsequence in subsequences:
-        result[subsequence] = longest_match(dna_sequence, subsequence)
+        results[subsequence] = longest_match(dna_sequence, subsequence)
 
     # Check database for matching profiles
     for person in database:
