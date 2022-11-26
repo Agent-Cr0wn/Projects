@@ -1,1 +1,1 @@
-select name from songs inner join ar on songs;
+select name from songs inner join artists on songs.artist_id = ;
