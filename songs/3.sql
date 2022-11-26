@@ -1,2 +1,2 @@
-SELECT name FROM songs
+SELECT * FROM songs
 ORDEr BY duration_ms
