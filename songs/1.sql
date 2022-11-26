@@ -1,1 +1,1 @@
-select name from songs;
+select name from songs inner join ar on songs;
