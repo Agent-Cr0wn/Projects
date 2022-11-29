@@ -79,7 +79,12 @@ WHERE (flights.year = 2021
         AND flights.day = 29
         AND flights.id = 36)
 AND NAME IN
-(SELECT phone_calls.caller_name FROM phone_calls
+(SELECT phone_calls.caller_name FROM people
+JOIN phone_calls ON phone_calls.caller = people.phone_number
+WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND duration < 60
 WHERE year = 2021
     AND month = 7
     AND day = 28
