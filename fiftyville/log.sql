@@ -69,4 +69,4 @@ SELECT flights.destination_airport_id, NAME, phone_number, license_plate FROM pe
 JOIN passengers ON people.passport_number = passengers.passport_number
 join flights ON flights.id = passengers.flight_id
 WHERE flights.id = 36
-ORDER BY flights.hour ASC;
+ORDER BY name ASC;
