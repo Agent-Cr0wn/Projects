@@ -55,3 +55,4 @@ WHERE year = 2021
 ORDER BY hour ASC
 LIMIT 1;
 
+SELECT id, full_name, flights
