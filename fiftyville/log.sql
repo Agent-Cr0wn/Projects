@@ -56,4 +56,9 @@ ORDER BY hour ASC
 LIMIT 1;
 
 SELECT airports.full_name, airports.city, origin_airport_id FROM flights
-JOIN airports ON airports.full_name = 
+JOIN airports ON airports.full_name = flights.origin_airport_id
+WHERE year = 2021
+    AND month = 7
+    AND day = 29
+ORDER BY hour ASC
+LIMIT 1;
