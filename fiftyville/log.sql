@@ -84,10 +84,6 @@ JOIN phone_calls ON phone_calls.caller = people.phone_number
 WHERE year = 2021
     AND month = 7
     AND day = 28
-    AND duration < 60
-WHERE year = 2021
-    AND month = 7
-    AND day = 28
     AND duration < 60)
 AND name IN
 (SELECT people.name FROM people
