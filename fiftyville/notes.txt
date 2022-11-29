@@ -1,6 +1,12 @@
 3 witnesses / time of theft = 10:15am / "bakery"
 
 witness 1
-    within 10 min gets into car in bakery parking / security footage / license plate
+    within 10 min gets into car in bakery parking
+    security footage
+    license plate
 witness 2
-    Withdrew money from atm on Legget street
+    withdrew money from atm on Legget street
+witness 3
+    phone call < 1 min duration
+    earliest flight next day
+    requested accomplice to purchase the ticket
