@@ -67,6 +67,15 @@ LIMIT 1;
 
 SELECT flights.destination_airport_id, NAME, phone_number, license_plate FROM people
 JOIN passengers ON people.passport_number = passengers.passport_number
-join flights ON flights.id = passengers.flight_id
+JOIN flights ON flights.id = passengers.flight_id
 WHERE flights.id = 36
 ORDER BY name ASC;
+
+SELECT name FROM people
+JOIN passengers ON people.passport_number = passengers.passport_number
+JOIN flights ON flights.id = passengers.flight_id
+WHERE (flights.year = 2021
+        AND flights.month = 7
+        AND flights.day = 29
+        AND flights.id = 36)
+
