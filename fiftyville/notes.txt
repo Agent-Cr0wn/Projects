@@ -3,4 +3,4 @@
 witness 1
     within 10 min gets into car in bakery parking / security footage / license plate
 witness 2
-    
+    Withdrew money from atm on Legget street
