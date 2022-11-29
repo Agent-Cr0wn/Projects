@@ -19,7 +19,8 @@ WHERE bakery_security_logs.year = 2021
     AND bakery_security_logs.day = 28
     AND bakery_security_logs.hour = 10
     AND bakery_security_logs.minute >= 15
-    AND bakery_security_logs.minute <= 25;
+    AND bakery_security_logs.minute <= 25
+ORDER BY name ASC;
 
 SELECT people.name, atm_transactions.transaction_type FROM people
 JOIN bank_accounts ON bank_accounts.person_id = people.id
@@ -28,18 +29,21 @@ WHERE atm_transactions.year = 2021
     AND atm_transactions.month = 7
     AND atm_transactions.day = 28
     AND atm_location = "Leggett Street"
-    AND atm_transactions.transaction_type = "withdraw";
+    AND atm_transactions.transaction_type = "withdraw"
+ORDER BY name ASC;
 
 SELECT name, phone_calls.caller, phone_calls.receiver FROM people
 JOIN phone_calls ON phone_calls.caller = people.phone_number
 WHERE year = 2021
     AND month = 7
     AND day = 28
-    AND duration < 60;
+    AND duration < 60
+ORDER BY name ASC;
 
 SELECT name, phone_calls.receiver, phone_calls.caller FROM people
 JOIN phone_calls ON phone_calls.receiver = people.phone_number
 WHERE year = 2021
     AND month = 7
     AND day = 28
-    AND duration < 60;
+    AND duration < 60
+ORDER BY name ASC;
