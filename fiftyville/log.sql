@@ -36,7 +36,7 @@ WHERE year = 2021
     AND day = 28
     AND duration < 60;
 
-SELECT name, phone_number, phone_calls.caller, phone_calls.receiver FROM people
+SELECT name, phone_calls.caller, phone_calls.receiver FROM people
 JOIN phone_calls ON phone_calls.caller = people.phone_number
 WHERE year = 2021
     AND month = 7
