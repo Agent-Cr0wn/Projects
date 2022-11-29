@@ -5,4 +5,4 @@ WHERE year = 2021
     AND month = 7
     AND day = 28;
 
-SELECT transcript FROM interviews
+-- SELECT transcript FROM interviews
