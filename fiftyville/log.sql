@@ -32,21 +32,27 @@ WHERE atm_transactions.year = 2021
     AND atm_transactions.transaction_type = "withdraw"
 ORDER BY name ASC;
 
-SELECT name, phone_calls.caller, phone_calls.receiver FROM people
-JOIN phone_calls ON phone_calls.caller = people.phone_number
-WHERE year = 2021
-    AND month = 7
-    AND day = 28
-    AND duration < 60
-ORDER BY name ASC;
+ALTER TABLE phone_calls
+ADD caller_name text;
 
-SELECT name, phone_calls.receiver, phone_calls.caller FROM people
-JOIN phone_calls ON phone_calls.receiver = people.phone_number
+ALTER TABLE phone_calls
+ADD receiver_name text;
+
+UPDATE phone_calls
+SET caller_name = people.name
+From people
+WHERE phone_calls.caller = people.phone_number;
+
+UPDATE phone_calls
+SET receiver_name = people.name
+From people
+WHERE phone_calls.receiver = people.phone_number;
+
+SELECT Caller, caller_name, receiver, receiver_name FROM phone_calls
 WHERE year = 2021
     AND month = 7
     AND day = 28
-    AND duration < 60
-ORDER BY name ASC;
+    AND duration < 60;
 
 UPDATE flights
 SET origin_airport_id = airports.city
@@ -79,9 +85,8 @@ WHERE (flights.year = 2021
         AND flights.day = 29
         AND flights.id = 36)
 AND NAME IN
-(SELECT phone_calls.caller_name FROM people
-JOIN phone_calls ON phone_calls.caller = people.phone_number
-WHERE year = 2021
+(
+    WHERE year = 2021
     AND month = 7
     AND day = 28
     AND duration < 60)
