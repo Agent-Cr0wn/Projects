@@ -37,4 +37,5 @@ WHERE year = 2021
     AND duration < 60;
 
 SELECT people.name, people.phone_number, phone_calls.caller, phone_calls.receiver FROM people
-JOIN 
+JOIN phone_calls ON phone_calls.caller = people.phone_number;
+    
