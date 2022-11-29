@@ -1,5 +1,6 @@
 3 witnesses / time of theft = 10:15am / "bakery"
 
 witness 1
-    within 10 min gets into car in bakery parking / security footage
+    within 10 min gets into car in bakery parking / security footage / license plate
 witness 2
+    
