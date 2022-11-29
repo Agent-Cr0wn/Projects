@@ -32,12 +32,6 @@ WHERE atm_transactions.year = 2021
     AND atm_transactions.transaction_type = "withdraw"
 ORDER BY name ASC;
 
-ALTER TABLE phone_calls
-ADD caller_name text;
-
-ALTER TABLE phone_calls
-ADD receiver_name text;
-
 UPDATE phone_calls
 SET caller_name = people.name
 From people
@@ -85,8 +79,8 @@ WHERE (flights.year = 2021
         AND flights.day = 29
         AND flights.id = 36)
 AND NAME IN
-(
-    WHERE year = 2021
+(SELECT phone_calls.caller_name FROM phone_calls
+WHERE year = 2021
     AND month = 7
     AND day = 28
     AND duration < 60)
