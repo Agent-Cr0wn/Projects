@@ -40,13 +40,13 @@ WHERE year = 2021
     AND duration < 60
 ORDER BY name ASC;
 
---SELECT name, phone_calls.receiver, phone_calls.caller FROM people
---JOIN phone_calls ON phone_calls.receiver = people.phone_number
---WHERE year = 2021
-    --AND month = 7
-    --AND day = 28
-    --AND duration < 60
---ORDER BY name ASC;
+SELECT name, phone_calls.receiver, phone_calls.caller FROM people
+JOIN phone_calls ON phone_calls.receiver = people.phone_number
+WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND duration < 60
+ORDER BY name ASC;
 
 SELECT id, hour, minute, origin_airport_id, destination_airport_id FROM flights
 WHERE year = 2021
