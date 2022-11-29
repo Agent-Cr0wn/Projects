@@ -55,4 +55,5 @@ WHERE year = 2021
 ORDER BY hour ASC
 LIMIT 1;
 
-SELECT airports.full_name, airports.city flights, 
+SELECT airports.full_name, airports.city, origin_airport_id FROM flights
+JOIN airports ON airports.full_name = 
