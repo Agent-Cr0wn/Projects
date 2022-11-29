@@ -21,3 +21,5 @@ WHERE bakery_security_logs.year = 2021
     AND bakery_security_logs.minute >= 15
     AND bakery_security_logs.minute <= 25;
 
+SELECT people.name, atm_transactions.transaction_type FROM people
+JOIN bank_accounts ON bank_accounts.person_id = people.id
