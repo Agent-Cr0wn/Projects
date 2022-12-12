@@ -25,7 +25,8 @@
                     })
                 }
                 document.querySelector("#free_button").addEventListener('click', function(){
-                    let input + document.querySelector("input").value;
+                    let input + document.querySelector("input");
+                    let free_message = document.querySelector("#free-message");
                     if (input.value == "1636")
                     {
                         input.style.backgroundColor = "green";
@@ -34,6 +35,7 @@
                     else
                     {
                         input.style.backgroundColor = "green";
+                        free_message.innerHTML = "Correct"
                     }
 
                 })
