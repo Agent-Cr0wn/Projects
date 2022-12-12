@@ -8,7 +8,18 @@
         <script>
             // TODO: Add code to check answers to questions
             document.addEventListner('DOMContentLoaded", function(){
-                let correct_button = 
+                let correct_button = document.querySelector("#correct");
+                let incorrect_buttons = document.querySelectorAll(".incorrect");
+
+                correct_button.addEventListener('click', function(){
+                    correct_button.style.backgroundColor = "green";
+                })
+                for (let i = 0; i < incorrect_buttons.length; i++)
+                {
+                    incorrect_buttons[i].addEventListener('click", function(){
+                        incorrect_button.style.backgroundColor = "red";
+                    })
+                }
             });
         </script>
     </head>
