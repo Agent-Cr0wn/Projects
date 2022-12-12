@@ -24,6 +24,9 @@
                         message.innerHTML = "Incorrect";
                     })
                 }
+                document.querySelector("free_button").addEventListener('click', function(){
+                    
+                })
             });
 
         </script>
@@ -55,7 +58,8 @@
                 <!-- TODO: Add free response question here -->
                 <h3>When was Harvard found?</h3>
                 <input type="text">
-                <button>Check Answer</button>
+                <button id="free_button">Check Answer</button>
+                <p id= "free_message"></p>
             </div>
         </div>
     </body>
