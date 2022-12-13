@@ -17,6 +17,10 @@ a:hover {
     color: #005580;
 }
 
+.paragraph {
+    text-align: center;
+}
+
 .header {
     background-color: #fab558;
     color: #fff;
