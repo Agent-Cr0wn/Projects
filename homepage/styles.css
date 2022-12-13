@@ -2,31 +2,31 @@ body {
     font-family: "Arial", sans-serif;
     background-color: white;
     color: black;
-  }
+}
 
-  h1, h2, h3 {
+h1, h2, h3 {
     color: #444;
-  }
+}
 
-  a {
+a {
     color: #0088cc;
     text-decoration: none;
-  }
+}
 
-  a:hover {
+a:hover {
     color: #005580;
-  }
+}
 
   .container {
     max-width: 960px;
     margin: 0 auto;
-  }
+}
 
-  .navbar {
+.navbar {
     background-color: #0088cc;
     padding: 10px;
-  }
+}
 
-  .navbar a {
+.navbar a {
     color: white;
-  }
+}
