@@ -12,7 +12,7 @@ a {
     color: #221300;
     text-decoration: none;
     background-color: #fab558;
-    
+
 }
 
 a:hover {
@@ -20,7 +20,9 @@ a:hover {
 }
 
 .paragraph {
+    max-width: 960px;
     text-align: center;
+
 }
 
 .header {
