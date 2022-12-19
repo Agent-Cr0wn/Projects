@@ -12,8 +12,7 @@
             const buttons = document.querySelectorAll('.btn-check');
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const checkmark = button.querySelector('.checkmark');
-                    checkmark.style.display = checkmark.style.display === 'block' ? 'none' : 'block';
+                    button.classList.toggle('selected');
                 });
             });
         });
