@@ -8,10 +8,12 @@
         <title>Home</title>
         <script>
             let counter = 0;
-            const likeButton = document.querySelector('.btn-primary');
-            likeButton.addEventListener('click', () => {
-                counter++;
-                likeButton.innerText = `Like (${counter})`;
+            document.addEventListener('DOMContentLoaded', function(){
+                const likeButton = document.querySelector('.btn-primary');
+                likeButton.addEventListener('click', () => {
+                    counter++;
+                    likeButton.innerText = `Like (${counter})`;
+                })
             });
 
         </script>
