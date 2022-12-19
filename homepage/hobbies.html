@@ -11,6 +11,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.btn-check');
             console.log("btns", buttons);
+            buttons[0].addEventListener('click', () => {
+                    console.log("poes");
+                    // button.classList.toggle('selected');
+                });
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
                     console.log("poes");
@@ -40,7 +44,7 @@
             <h3>Which of my hobbies do you personally enjoy?</h3>
         </div>
         <div class="container">
-            <button class="btn btn-check" onclick="myFunction">Water Skiing</button>
+            <button class="btn btn-check">Water Skiing</button>
             <button class="btn btn-check">Gaming</button>
             <button class="btn btn-check">Exercising</button>
         </div>
