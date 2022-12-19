@@ -40,6 +40,7 @@ a:hover {
 }
 
 .btn-primary {
+    margin-right: 1rem;
     color: #fff;
     background-color: #a45c52;
     border-color: #a45c52;
@@ -52,7 +53,7 @@ a:hover {
 .btn-primary.selected::before {
         content: "✔";
         position: relative;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
 }
