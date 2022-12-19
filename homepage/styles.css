@@ -41,6 +41,7 @@ a:hover {
     justify-content: center;
 }
 
+
 .btn-primary {
     margin-right: 1rem;
     color: #fff;
@@ -67,12 +68,11 @@ a:hover {
     outline: solid;
     outline-color: white;
 }
+
 .navbarbutton {
     margin: 1rem;
     outline: solid;
     outline-color: #a45c52;
     padding-left: 15px;
     padding-right: 15px;
-
-
 }
