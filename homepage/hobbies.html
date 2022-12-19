@@ -8,11 +8,12 @@
         <title>Ernst Hobbies</title>
     </head>
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.btn-check');
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
-                    button.classList.toggle('selected');
+                    const checkmark = button.querySelector('.checkmark');
+                    checkmark.style.display = checkmark.style.display === 'block' ? 'none' : 'block';
                 });
             });
         });
@@ -37,10 +38,20 @@
             <h3>Which of my hobbies do you personally enjoy?</h3>
         </div>
         <div class="container">
-            <button class="btn btn-check">Water Skiing</button>
-            <button class="btn btn-check">Gaming</button>
-            <button class="btn btn-check">Exercising</button>
+            <button class="btn btn-check">
+                Water Skiing
+                <div class="checkmark">&#x2714;</div>
+            </button>
+            <button class="btn btn-check">
+                Gaming
+                <div class="checkmark">&#x2714;</div>
+            </button>
+            <button class="btn btn-check">
+                Exercising
+                <div class="checkmark">&#x2714;</div>
+            </button>
         </div>
+
 
     </body>
 </html>

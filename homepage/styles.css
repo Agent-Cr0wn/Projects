@@ -57,21 +57,6 @@ a:hover {
     border-color: #a45c52;
 }
 
-.btn-check {
-    background-color: #a54747;
-    color: white;
-    position: relative;
-}
-
-.btn-check.selected {
-    background-color: #6a4c41;
-    content: "✔";
-}
-
-.btn-check.selected::before {
-        content: "✔";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+.checkmark {
+    display: none;
 }
