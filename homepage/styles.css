@@ -60,6 +60,10 @@ a:hover {
 }
 
 .btn-primary:hover {
-    background-color:white;
+    background-color: white;
     transition: 0.7s;
+}
+.navbarbutton {
+    margin: 1rem;
+    outline: solid;
 }
