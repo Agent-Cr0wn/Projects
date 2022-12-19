@@ -62,6 +62,7 @@ a:hover {
 }
 
 .btn-check::before {
+    align: center;
     content: "✔";
     font-size: 20px;
     color: #fff;
@@ -69,4 +70,8 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.btn-check.selected {
+    background-color: #6a4c41;
 }

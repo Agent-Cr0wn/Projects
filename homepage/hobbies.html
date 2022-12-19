@@ -7,6 +7,16 @@
         <link href="styles.css" rel="stylesheet">
         <title>Ernst Hobbies</title>
     </head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const buttons = document.querySelectorAll('.btn-check');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.classList.toggle('selected');
+                });
+            });
+        });
+    </script>
     <body>
         <div class="topnav">
             <a href="index.html">Home</a>
