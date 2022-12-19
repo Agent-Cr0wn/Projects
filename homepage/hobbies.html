@@ -11,7 +11,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.btn-check');
             buttons.forEach(button => {
-                button.addEventListener('click', function(){
+                button.addEventListener('click', () => {
                     const checkmark = button.querySelector('.checkmark');
                     checkmark.style.display = checkmark.style.display === 'block' ? 'none' : 'block';
                 });
@@ -25,9 +25,6 @@
             <a href="csbackground.html">CS Backround</a>
             <a href="cs50reason.html">Why CS50?</a>
         </div>
-
-
-
         <div class="header">
             <h1>My Hobbies</h1>
         </div>
