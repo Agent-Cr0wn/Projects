@@ -48,3 +48,9 @@ a:hover {
 .navbar a {
     color: white;
 }
+
+.btn-primary {
+    color: #fff;
+    background-color: #a45c52;
+    border-color: #a45c52;
+}
