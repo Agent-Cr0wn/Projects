@@ -53,6 +53,7 @@ a:hover {
 
 .btn-check.selected {
     background-color: #6a4c41;
+    content: "✔";
 }
 
 .btn-check.selected::before {
@@ -61,4 +62,9 @@ a:hover {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+}
+
+.btn-check:hover {
+    background-color:white;
+    transition: 0.7s;
 }
