@@ -9,7 +9,12 @@
         <script>
             let counter = 0;
             const likeButton = document.querySelector('.btn-primary');
-            likeButton.addEventListener('click', () => {});
+            likeButton.addEventListener('click', () => {
+                likeButton.addEventListener('click', () => {counter++;
+                likeButton.innerText = `Like (${counter})`;
+                });
+            });
+
         </script>
     </head>
     <body>
