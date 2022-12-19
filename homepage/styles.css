@@ -54,7 +54,6 @@ a:hover {
 
 .btn-check.selected {
     background-color: #6a4c41;
-    content: "✔";
 }
 
 .btn-check.selected::before {
