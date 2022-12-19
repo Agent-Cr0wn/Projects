@@ -40,17 +40,6 @@ a:hover {
     align-items: center; /* vertically align the buttons */
 }
 
-
-.navbar {
-    margin: auto;
-    max-width: 960px;
-    text-align: center;
-}
-
-.navbar a {
-    color: white;
-}
-
 .btn-primary {
     color: #fff;
     background-color: #a45c52;
