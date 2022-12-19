@@ -66,4 +66,7 @@ a:hover {
 .navbarbutton {
     margin: 1rem;
     outline: solid;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
