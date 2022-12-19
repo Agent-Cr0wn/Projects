@@ -11,6 +11,8 @@
             document.addEventListener('DOMContentLoaded', function(){
             const likeButton = document.querySelector('.btn-primary');
             likeButton.addEventListener('click', () => {
+                counter++;
+                likeButton.innertext = 'Like (${counter})';
                 likeButton.disabled = true;
                 alert('Thank you for liking this page!');
                 });
