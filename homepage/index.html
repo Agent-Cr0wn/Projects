@@ -9,11 +9,11 @@
         <script>
             let counter = 0;
             document.addEventListener('DOMContentLoaded', function(){
-                const likeButton = document.querySelector('.btn-primary');
-                likeButton.addEventListener('click', () => {
-                    counter++;
-                    likeButton.innerText = `Like (${counter})`;
-                })
+            const likeButton = document.querySelector('.btn-primary');
+            likeButton.addEventListener('click', () => {
+                likeButton.disabled = true;
+                alert('Thank you for liking this page!');
+                });
             });
 
         </script>
