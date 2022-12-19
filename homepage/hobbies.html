@@ -9,12 +9,14 @@
     </head>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            let buttons = document.querySelectorAll('.btn-check');
+            const buttons = document.querySelectorAll('.btn-check');
+            console.log("btns", buttons);
             buttons.forEach(button => {
-                console.log(button)
                 button.addEventListener('click', () => {
-                    button.classList.toggle('selected');
+                    console.log("poes");
+                    // button.classList.toggle('selected');
                 });
+                console.log("button", button);
             });
         });
     </script>
