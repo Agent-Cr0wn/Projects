@@ -54,3 +54,8 @@ a:hover {
     background-color: #a45c52;
     border-color: #a45c52;
 }
+.btn-check::before {
+    content: "✔";
+    font-size: 20px;
+    color: #fff;
+}
