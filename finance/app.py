@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -70,6 +71,20 @@ def buy():
         user_id = session["user_id"]
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = user_cash_db[0]["cash"]
+
+        if user_cash < transaction_value:
+            return apology("Insufficient Funds!")
+
+        uptd_cash = user_cash - transaction_value
+
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", user_id)
+
+        date = datetime.datetime.now
+        
+
+
+
+
 
 
 
