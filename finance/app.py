@@ -41,7 +41,8 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+    user_id = session["user_id"]
+    
 
 
 @app.route("/buy", methods=["GET", "POST"])
