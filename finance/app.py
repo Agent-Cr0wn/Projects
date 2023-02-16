@@ -47,7 +47,26 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+    if request.method == "GET":
+        return render_template("buy.html")
+
+    else:
+        symbol = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
+
+        if not symbol:
+            return apology("Symbol Required!")
+
+        stock = lookup(symbol.upper())
+
+        if stock == None:
+            return apology("Symbol Doesn't Exist!")
+
+        if shares < 0:
+            return apology("Share Not Allowed!")
+
+
+
 
 
 @app.route("/history")
@@ -115,12 +134,12 @@ def quote():
         symbol = request.form.get("symbol")
 
         if not symbol:
-            return apology("Symbol Required")
+            return apology("Symbol Required!")
 
         stock = lookup(symbol.upper())
 
         if stock == None:
-            return apology("Symbol Doesn't Exist")
+            return apology("Symbol Doesn't Exist!")
 
         return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
 
