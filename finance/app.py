@@ -77,13 +77,13 @@ def buy():
 
         uptd_cash = user_cash - transaction_value
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", user_id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", uptd_cash, user_id)
 
         date = datetime.datetime.now
 
         db.execute("INSERT INTO transactions  (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
 
-        flash("Stocks Bought!)
+        flash("Stocks Bought!")
 
         return redirect("/")
 
