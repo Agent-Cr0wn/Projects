@@ -12,16 +12,24 @@
                 <th>Symbol</th>
                 <th>Shares</th>
                 <th>Price</th>
+                <th>Total Value</th>
             </tr>
         </thead>
         <tbody>
+            {% set total_value = 0 %}
             {% for row in database %}
             <tr>
                 <td>{{ row["symbol"] }}</td>
                 <td>{{ row["shares"] }}</td>
                 <td>{{ row["price"] }}</td>
+                <td>{{ row["shares"] * row["price"]|round(2) }}</td>
             </tr>
+            {% set total_value = total_value + (row["shares"] * row["price"]) %}
             {% endfor %}
+            <tr>
+                <td colspan="3"><b>Total Portfolio Value:</b></td>
+                <td><b>{{ total_value|round(2) }}</b></td>
+            </tr>
         </tbody>
     </table>
 </div>

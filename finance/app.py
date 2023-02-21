@@ -43,7 +43,7 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
 
-    transactions_db = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM transactions WHERE user_id = ?", user_id)
+    transactions_db = db.execute("SELECT symbol, price, SUM(shares) AS shares FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
     cash = cash_db[0]["cash"]
 
@@ -70,21 +70,21 @@ def buy():
         if stock == None:
             return apology("Symbol Doesn't Exist!")
 
-        if shares < 0:
+        if shares <= 0:
             return apology("Share Not Allowed!")
 
         transaction_value = shares * stock["price"]
 
         user_id = session["user_id"]
-        user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+        user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id = user_id)
         user_cash = user_cash_db[0]["cash"]
 
         if user_cash < transaction_value:
             return apology("Insufficient Funds!")
 
-        uptd_cash = user_cash - transaction_value
+        remaining_cash = user_cash - transaction_value
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", uptd_cash, user_id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", remaining_cash, user_id)
 
         date = datetime.datetime.now()
 
