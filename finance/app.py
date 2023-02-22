@@ -43,15 +43,21 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
 
+    # Retrieve the stocks owned by the user and the total number of shares owned for each stock
     stocks = db.execute("SELECT symbol, price, SUM(shares) AS shares FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
+
+    # Retrieve the cash balance of the user
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
+    # Calculate the total value of the portfolio, which is the sum of the cash balance and the value of all the owned stocks
     total = cash
 
     for stock in stocks:
         total += stock["price"] * stock["shares"]
 
+    # Pass the stocks, cash balance, and total portfolio value to the index.html template to be displayed
     return render_template("index.html", stocks=stocks, cash=cash, usd=usd, total=total)
+
 
 
 
@@ -117,7 +123,7 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+    
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
