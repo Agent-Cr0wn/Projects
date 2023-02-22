@@ -164,17 +164,23 @@ def quote():
 
     # if the request method is POST
     else:
+        # get the symbol from the form submitted
         symbol = request.form.get("symbol")
 
+        # if no symbol is provided, return an apology message
         if not symbol:
             return apology("Symbol Required!")
 
+        # lookup the stock information using the provided symbol
         stock = lookup(symbol.upper())
 
+        # if the stock cannot be found, return an apology message
         if stock == None:
             return apology("Symbol Doesn't Exist!")
 
+        # render the quoted.html template with the stock information
         return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
+
 
 
 @app.route("/register", methods=["GET", "POST"])
