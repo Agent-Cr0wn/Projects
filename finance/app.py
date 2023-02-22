@@ -243,7 +243,7 @@ def sell():
         user_shares = db.execute("SELECT SUM(shares) AS total_shares FROM transactions WHERE user_id = :id AND symbol = :symbol AND shares > 0", id=user_id, symbol=symbol)
         user_shares_real = user_shares[0]["total_shares"]
 
-        if shares > user_shares_real:
+        if int(shares) > int(user_shares_real):
             return apology("Insufficiant Shares!")
 
         remaining_cash = user_cash + transaction_value
