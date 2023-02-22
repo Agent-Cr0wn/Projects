@@ -110,7 +110,7 @@ def buy():
         # Record the transaction in the database
         date = datetime.datetime.now()
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
-        user_id, stock["symbol"], shares, stock["price"], date)
+                   user_id, stock["symbol"], shares, stock["price"], date)
 
         # Flash a success message
         flash("Stocks Bought!")
@@ -205,7 +205,7 @@ def quote():
             return apology("Symbol Doesn't Exist!")
 
         # render the quoted.html template with the stock information
-        return render_template("quoted.html", name = stock["name"], price=stock["price"], symbol=stock["symbol"])
+        return render_template("quoted.html", name=stock["name"], price=stock["price"], symbol=stock["symbol"])
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -257,7 +257,7 @@ def sell():
         user_id = session["user_id"]
         # Get a list of symbols for stocks that the user owns
         symbols_user = db.execute(
-        "SELECT symbol FROM transactions WHERE user_id = :id  GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
+            "SELECT symbol FROM transactions WHERE user_id = :id  GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
         # Render the sell template and pass in the symbols
         return render_template("sell.html", symbols=[row["symbol"] for row in symbols_user])
 
@@ -284,7 +284,8 @@ def sell():
         user_cash = user_cash_db[0]["cash"]
 
         # Get the total number of shares the user has for the given stock
-        user_shares = db.execute("SELECT SUM(shares) AS total_shares FROM transactions WHERE user_id = :id AND symbol = :symbol AND shares > 0", id=user_id, symbol=symbol)
+        user_shares = db.execute(
+            "SELECT SUM(shares) AS total_shares FROM transactions WHERE user_id = :id AND symbol = :symbol AND shares > 0", id=user_id, symbol=symbol)
         user_shares_real = user_shares[0]["total_shares"]
 
         # Ensure that the user has enough shares to sell
@@ -297,7 +298,8 @@ def sell():
 
         # Add a new transaction to the database to record the sale
         date = datetime.datetime.now()
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], -shares, stock["price"], date)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
+                   user_id, stock["symbol"], -shares, stock["price"], date)
 
         # Show a success message to the user
         flash("Stocks Sold!")
