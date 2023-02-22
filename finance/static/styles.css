@@ -48,3 +48,8 @@ td
 {
     border-bottom: 1px solid #ddd; /* add bottom border to non-header cells */
 }
+tr.total-value
+{
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}

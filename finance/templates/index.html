@@ -8,7 +8,7 @@
 <div class="table-container">
     <table class="center">
         <thead>
-            <tr>
+            <tr style="border-top: 3px solid black;">
                 <th>Symbol</th>
                 <th>Shares</th>
                 <th>Price</th>
@@ -16,21 +16,25 @@
             </tr>
         </thead>
         <tbody>
-            {% set total_value = 0 %}
-            {% for row in database %}
+            {% for stock in stocks %}
             <tr>
-                <td>{{ row["symbol"] }}</td>
-                <td>{{ row["shares"] }}</td>
-                <td>{{ row["price"] }}</td>
-                <td>{{ row["shares"] * row["price"]|round(2) }}</td>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ usd(stock["price"]) }}</td>
+                <td>{{ usd(stock["shares"] * stock["price"]) }}</td>
             </tr>
-            {% set total_value = total_value + (row["shares"] * row["price"]) %}
             {% endfor %}
-            <tr>
-                <td colspan="3"><b>Total Portfolio Value:</b></td>
-                <td><b>{{ total_value|round(2) }}</b></td>
+            <tr style="border-top: 3px solid black;">
+                <td colspan="3"><b>Cash:</b></td>
+                <td><b>{{ usd(cash) }}</b></td>
             </tr>
         </tbody>
+        <tfoot>
+            <tr class="total-value">
+                <td colspan="3"><b>Total Value:</b></td>
+                <td><b>{{ usd(total) }}</b></td>
+            </tr>
+        </tfoot>
     </table>
 </div>
 {% endblock %}

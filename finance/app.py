@@ -43,11 +43,15 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
 
-    transactions_db = db.execute("SELECT symbol, price, SUM(shares) AS shares FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
-    cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-    cash = cash_db[0]["cash"]
+    stocks = db.execute("SELECT symbol, price, SUM(shares) AS shares FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
-    return render_template("index.html", database = transactions_db, cash = cash)
+    total = cash
+
+    for stock in stocks:
+        total += stock["price"] * stock["shares"]
+
+    return render_template("index.html", stocks=stocks, cash=cash, usd=usd, total=total)
 
 
 
@@ -210,4 +214,4 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+  
