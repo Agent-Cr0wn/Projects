@@ -27,7 +27,6 @@ db = SQL("sqlite:///finance.db")
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
 
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -35,7 +34,6 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
-
 
 @app.route("/")
 @login_required
@@ -57,9 +55,6 @@ def index():
 
     # Pass the stocks, cash balance, and total portfolio value to the index.html template to be displayed
     return render_template("index.html", stocks=stocks, cash=cash, usd=usd, total=total)
-
-
-
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
