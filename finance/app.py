@@ -187,35 +187,41 @@ def quote():
 def register():
     """Register user"""
     if request.method == "GET":
+        # Render the register template if method is GET
         return render_template("register.html")
 
     else:
+        # Get username, password, and confirmation from form data
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
 
+        # Check if required fields are not empty
         if not username:
             return apology("Username Required!")
-
         if not password:
             return apology("Password Required!")
-
         if not confirmation:
             return apology("Confirm Password!")
 
+        # Check if passwords match
         if password != confirmation:
             return apology("Passwords Don't Match!")
 
+        # Generate hash of the password
         hash = generate_password_hash(password)
 
         try:
+            # Add the new user to the database
             new_user = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
         except:
+            # Return apology if the username already exists
             return apology("Username Already Exists!")
 
+        # Store user ID in session and redirect to index page
         session["user_id"] = new_user
-
         return redirect("/")
+
 
 
 
