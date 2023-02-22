@@ -220,4 +220,37 @@ def sell():
         return render_template("sell.html", symbols = [row["symbol"] for row in symbols_user])
 
     else:
-        
+        symbol = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
+
+        if not symbol:
+            return apology("Symbol Required!")
+
+        stock = lookup(symbol.upper())
+
+        if stock == None:
+            return apology("Symbol Doesn't Exist!")
+
+        if shares <= 0:
+            return apology("Share Not Allowed!")
+
+        transaction_value = shares * stock["price"]
+
+        user_id = session["user_id"]
+        user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id = user_id)
+        user_cash = user_cash_db[0]["cash"]
+
+        if user_cash < transaction_value:
+            return apology("Insufficient Funds!")
+
+        remaining_cash = user_cash - transaction_value
+
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", remaining_cash, user_id)
+
+        date = datetime.datetime.now()
+
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
+
+        flash("Stocks Bought!")
+
+        return redirect("/")
