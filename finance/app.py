@@ -234,6 +234,8 @@ def sell():
         if shares <= 0:
             return apology("Share Not Allowed!")
 
+        user_shares = db.execute
+
         transaction_value = shares * stock["price"]
 
         user_id = session["user_id"]
@@ -246,7 +248,7 @@ def sell():
 
         date = datetime.datetime.now()
 
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], -shares, stock["price"], date)
 
         flash("Stocks Sold!")
 
