@@ -157,9 +157,12 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
+
+    # if the request method is GET, return the quote.html template
     if request.method == "GET":
         return render_template("quote.html")
 
+    # if the request method is POST
     else:
         symbol = request.form.get("symbol")
 
