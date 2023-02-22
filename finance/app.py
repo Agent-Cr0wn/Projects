@@ -59,52 +59,65 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+
+    # If user navigates to the page, display the buy form
     if request.method == "GET":
         return render_template("buy.html")
 
+    # If user submits the form, process the request
     else:
+        # Get the symbol and shares from the form
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
 
+        # Check if symbol is provided
         if not symbol:
             return apology("Symbol Required!")
 
+        # Lookup the stock information from API
         stock = lookup(symbol.upper())
 
+        # Check if symbol exists
         if stock == None:
             return apology("Symbol Doesn't Exist!")
 
+        # Check if the number of shares is valid
         if shares <= 0:
             return apology("Share Not Allowed!")
 
+        # Calculate the total transaction value
         transaction_value = shares * stock["price"]
 
+        # Get the current user id and cash balance from the database
         user_id = session["user_id"]
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id = user_id)
         user_cash = user_cash_db[0]["cash"]
 
+        # Check if user has enough balance to complete the transaction
         if user_cash < transaction_value:
             return apology("Insufficient Funds!")
 
+        # Calculate remaining cash after buying the stocks
         remaining_cash = user_cash - transaction_value
 
+        # Update user's cash balance in the database
         db.execute("UPDATE users SET cash = ? WHERE id = ?", remaining_cash, user_id)
 
+        # Record the transaction in the database
         date = datetime.datetime.now()
-
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
 
+        # Flash a success message
         flash("Stocks Bought!")
 
+        # Redirect user to the homepage
         return redirect("/")
-
 
 @app.route("/history")
 @login_required
 def history():
     """Show history of transactions"""
     return apology("TODO")
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -141,7 +154,6 @@ def login():
     else:
         return render_template("login.html")
 
-
 @app.route("/logout")
 def logout():
     """Log user out"""
@@ -151,7 +163,6 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
-
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
@@ -180,8 +191,6 @@ def quote():
 
         # render the quoted.html template with the stock information
         return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
-
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -221,9 +230,6 @@ def register():
         # Store user ID in session and redirect to index page
         session["user_id"] = new_user
         return redirect("/")
-
-
-
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
