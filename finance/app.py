@@ -234,13 +234,17 @@ def sell():
         if shares <= 0:
             return apology("Share Not Allowed!")
 
-        user_shares = db.execute
-
         transaction_value = shares * stock["price"]
 
         user_id = session["user_id"]
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id = user_id)
         user_cash = user_cash_db[0]["cash"]
+
+        user_shares = db.execute("SELECT shares FROM transactions WHERE id = :id AND symbol = :symbol GROUP BY symbol", user_id, symbol)
+        user_shares_real = user_shares[0]["shares"]
+
+        if shares > user_shares_real:
+            return apology("Insufficiant Shares!")
 
         remaining_cash = user_cash + transaction_value
 
