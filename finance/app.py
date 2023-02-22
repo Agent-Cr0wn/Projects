@@ -27,6 +27,7 @@ db = SQL("sqlite:///finance.db")
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
 
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -34,6 +35,7 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
+
 
 @app.route("/")
 @login_required
@@ -55,6 +57,7 @@ def index():
 
     # Pass the stocks, cash balance, and total portfolio value to the index.html template to be displayed
     return render_template("index.html", stocks=stocks, cash=cash, usd=usd, total=total)
+
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -91,7 +94,7 @@ def buy():
 
         # Get the current user id and cash balance from the database
         user_id = session["user_id"]
-        user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id = user_id)
+        user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = user_cash_db[0]["cash"]
 
         # Check if user has enough balance to complete the transaction
@@ -106,13 +109,15 @@ def buy():
 
         # Record the transaction in the database
         date = datetime.datetime.now()
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)",
+        user_id, stock["symbol"], shares, stock["price"], date)
 
         # Flash a success message
         flash("Stocks Bought!")
 
         # Redirect user to the homepage
         return redirect("/")
+
 
 @app.route("/history")
 @login_required
@@ -125,6 +130,7 @@ def history():
 
     # Pass the transactions to the history.html template to be displayed
     return render_template("history.html", transactions=transactions, usd=usd)
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -161,6 +167,7 @@ def login():
     else:
         return render_template("login.html")
 
+
 @app.route("/logout")
 def logout():
     """Log user out"""
@@ -170,6 +177,7 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
+
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
@@ -197,7 +205,8 @@ def quote():
             return apology("Symbol Doesn't Exist!")
 
         # render the quoted.html template with the stock information
-        return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
+        return render_template("quoted.html", name = stock["name"], price=stock["price"], symbol=stock["symbol"])
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -238,6 +247,7 @@ def register():
         session["user_id"] = new_user
         return redirect("/")
 
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
@@ -246,7 +256,8 @@ def sell():
         # Get the user's ID from the session
         user_id = session["user_id"]
         # Get a list of symbols for stocks that the user owns
-        symbols_user = db.execute("SELECT symbol FROM transactions WHERE user_id = :id  GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
+        symbols_user = db.execute(
+        "SELECT symbol FROM transactions WHERE user_id = :id  GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
         # Render the sell template and pass in the symbols
         return render_template("sell.html", symbols=[row["symbol"] for row in symbols_user])
 
