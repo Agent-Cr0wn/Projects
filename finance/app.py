@@ -314,11 +314,12 @@ def add_cash():
     if request.method == "GET":
         return render_template("addCash.html")
     else:
-        cash_amount = int(request.form.get("cash_amount"))
+        cash_amount = request.form.get("cash_amount")
 
-        if not cash_amount:
+        if cash_amount is None or cash_amount == "":
             return apology("Please Enter Amount")
 
+        cash_amount = int(cash_amount)
         user_id = session["user_id"]
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = user_cash_db[0]["cash"]
