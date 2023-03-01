@@ -354,10 +354,14 @@ def change_password():
         new_password = request.form.get("new_password")
         confirm_password = request.form.get("confirm_password")
 
+        print(f"old_password: {old_password}")
+        print(f"new_password: {new_password}")
+        print(f"confirm_password: {confirm_password}")
+
         # Get user info from database
         user_id = session["user_id"]
         user_db = db.execute("SELECT * FROM users WHERE id = :id", id=user_id)
-        
+
         # Ensure all fields are filled out
         if not old_password or not new_password or not confirm_password:
             return apology("Please fill out all fields")
