@@ -358,10 +358,6 @@ def change_password():
         user_id = session["user_id"]
         user_db = db.execute("SELECT * FROM users WHERE id = :id", id=user_id)
 
-        # Ensure all fields are filled out
-        if not (old_password and new_password and confirm_password):
-            return apology("Please fill out all fields")
-
         # Ensure new password and confirmation match
         if new_password != confirm_password:
             return apology("New password and confirmation do not match")
