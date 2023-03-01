@@ -314,4 +314,9 @@ def add_cash():
     if request.method == "GET":
         return render_template("addCash.html")
     else:
-        
+        cash_amount = request.form.get("cash_amount")
+
+        if not cash_amount:
+            return apology("Please Enter Amount")
+
+            user_id = 
