@@ -323,5 +323,7 @@ def add_cash():
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = user_cash_db[0]["cash"]
 
-        remaining_cash = user_cash + cash_am
+        remaining_cash = user_cash + cash_amount
         db.execute("UPDATE users SET cash = ? WHERE id = ?", remaining_cash, user_id)
+
+        return redirect("/")
