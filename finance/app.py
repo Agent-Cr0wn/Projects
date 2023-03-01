@@ -316,7 +316,7 @@ def add_cash():
     else:
         cash_amount = request.form.get("cash_amount")
 
-        if cash_amount is None:
+        if cash_amount is None or cash_amount == "":
             return apology("Please Enter Amount")
 
         cash_amount = int(cash_amount)
