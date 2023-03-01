@@ -306,3 +306,12 @@ def sell():
 
         # Redirect the user to the homepage
         return redirect("/")
+
+@app.route("/add_cash", methods=["GET", "POST"])
+@login_required
+def add_cash():
+    """Add more cash to user account"""
+    if request.method == "GET":
+        return render_template("addCash.html")
+    else:
+        
