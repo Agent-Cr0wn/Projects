@@ -319,4 +319,5 @@ def add_cash():
         if not cash_amount:
             return apology("Please Enter Amount")
 
-            user_id = 
+        user_id = session["user_id"]
+        
