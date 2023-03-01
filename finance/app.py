@@ -311,23 +311,37 @@ def sell():
 @login_required
 def add_cash():
     """Add more cash to user account"""
+
+    # If request is GET, render the addCash.html template
     if request.method == "GET":
         return render_template("addCash.html")
+
+    # If request is POST, update the user's cash amount in the database
     else:
+        # Get cash amount from form data
         cash_amount = request.form.get("cash_amount")
 
+        # If no cash amount was provided, return an apology
         if cash_amount is None or cash_amount == "":
             return apology("Please Enter Amount")
 
+        # Convert cash amount to an integer
         cash_amount = int(cash_amount)
+
+        # Get user's current cash amount from database
         user_id = session["user_id"]
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = user_cash_db[0]["cash"]
 
+        # Calculate remaining cash after adding the new amount
         remaining_cash = user_cash + cash_amount
+
+        # Update user's cash amount in the database
         db.execute("UPDATE users SET cash = ? WHERE id = ?", remaining_cash, user_id)
 
+        # Redirect user to home page
         return redirect("/")
+
 
 @app.route("/change_password", methods=["GET", "POST"])
 @login_required
