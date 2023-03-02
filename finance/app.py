@@ -86,7 +86,7 @@ def buy():
             return apology("Symbol Doesn't Exist!")
 
         # Check if the number of shares is valid
-        if shares <= 0 or not shares.is_integer():
+        if shares <= 0 or isinstance(shares, int):
             return apology("Share Not Allowed!")
 
         # Calculate the total transaction value
