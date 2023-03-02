@@ -70,6 +70,11 @@ def buy():
 
     # If user submits the form, process the request
     else:
+        try:
+            int(shares)
+        except:
+            return apology("Share Not Allowed!xxx")
+
         # Get the symbol and shares from the form
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
@@ -88,11 +93,6 @@ def buy():
         # Check if the number of shares is valid
         if shares <= 0:
             return apology("Share Not Allowed!")
-
-        try:
-            int(shares)
-        except:
-            return apology("Share Not Allowed!xxx")
 
         # Calculate the total transaction value
         transaction_value = shares * stock["price"]
