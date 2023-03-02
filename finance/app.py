@@ -307,6 +307,7 @@ def sell():
         # Redirect the user to the homepage
         return redirect("/")
 
+
 @app.route("/add_cash", methods=["GET", "POST"])
 @login_required
 def add_cash():
