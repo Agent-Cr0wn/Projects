@@ -89,7 +89,9 @@ def buy():
         if shares <= 0:
             return apology("Share Not Allowed!")
 
-        if shares isinstance(shares, int):
+        try:
+            int(shares)
+        except:
             return apology("Share Not Allowed!xxx")
 
         # Calculate the total transaction value
