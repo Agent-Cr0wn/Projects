@@ -71,9 +71,9 @@ def buy():
     # If user submits the form, process the request
     else:
         try:
-            int(shares)
+            int(request.form.get("shares"))
         except:
-            return apology("Share Not Allowed!xxx")
+            return apology("Share Not Allowed!")
 
         # Get the symbol and shares from the form
         symbol = request.form.get("symbol")
