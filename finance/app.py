@@ -68,7 +68,7 @@ def buy():
     if request.method == "GET":
         return render_template("buy.html")
 
-    # If user submits the form, process the request
+    # Check if number valid
     else:
         try:
             int(request.form.get("shares"))
