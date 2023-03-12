@@ -3,14 +3,14 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-  <h1>Recent Posts</h1>
-  {% for post in posts %}
-    <div class="post">
-      <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-      <p class="meta">By {{ post.author.username }} on {{ post.date_created.strftime('%B %d, %Y') }}</p>
-      <p>{{ post.content }}</p>
-    </div>
-  {% else %}
-    <p>No posts yet. <a href="{{ url_for('create_post') }}">Create one now!</a></p>
-  {% endfor %}
+  <h1>Blog</h1>
+  <ul>
+    {% for post in posts %}
+    <li>
+      <h2><a href="{{ url_for('post', title=post['title']) }}">{{ post['title'] }}</a></h2>
+      <p>{{ post['content'] }}</p>
+      <p>By {{ post['author'] }} on {{ post['timestamp'].strftime('%Y-%m-%d') }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 {% endblock %}
