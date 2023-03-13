@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_session import Session
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
+from cs50 import SQL
 
 # Configure application
 app = Flask(__name__)
