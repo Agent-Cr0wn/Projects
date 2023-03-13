@@ -14,3 +14,7 @@ Session(app)
 
 # Configure to use SQLite database
 db = SQL("sqlite:///users.db")
+
+@app.route("/")
+def index():
+    
