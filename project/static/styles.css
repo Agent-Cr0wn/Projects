@@ -4,15 +4,30 @@ nav .navbar-brand
     font-size: xx-large;
 }
 
-/* Colors for brand */
-
-nav .navbar-brand .green
-{
-    color: #2e944b;
-}
-
 .navbar
 {
-    color: #2e944b;
+    background-color: #007bff; /* Set the background color to blue */
+    color: #fff; /* Set the text color to white */
 }
 
+.navbar-brand
+{
+    font-weight: bold; /* Make the brand text bold */
+}
+
+.nav-link
+{
+    font-size: 1.0rem; /* Increase the font size of the links */
+    font-weight: bold; /* Make the link text bold */
+    color: #fff; /* Set the link text color to white */
+}
+
+.navbar-toggler
+{
+    border: 1px solid #fff; /* Add a white border to the toggle button */
+}
+
+.navbar-toggler-icon
+{
+    background-color: #fff; /* Set the color of the toggle icon to white */
+}
