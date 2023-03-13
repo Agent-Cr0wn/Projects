@@ -17,4 +17,4 @@ db = SQL("sqlite:///users.db")
 
 @app.route("/")
 def index():
-    
+    return render_template("index.html")
