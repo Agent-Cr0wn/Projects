@@ -1,67 +1,55 @@
-/* Style for the entire page */
-body
+/* Size for brand */
+nav .navbar-brand
 {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
+    font-size: xx-large;
 }
 
-  /* Style for the header section */
-header
+/* Colors for brand */
+nav .navbar-brand .blue
 {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+.table-container {
+    margin: 0 auto; /* center the table horizontally */
+    width: 80%; /* set the width of the table container */
 }
 
-  /* Style for the navigation menu */
-nav
+table
 {
-    background-color: #f2f2f2;
-    padding: 10px;
+    border-collapse: collapse; /* remove cell borders */
+    width: 100%; /* set the width of the table */
 }
 
-nav ul
+th, td
 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    padding: 10px; /* add padding to cells */
+    text-align: center; /* center the text in cells */
 }
 
-nav li
+th
 {
-    float: left;
+    background-color: #f2f2f2; /* add background color to header cells */
+    font-weight: bold; /* add bold text to header cells */
 }
 
-nav li a
+td
 {
-    display: block;
-    color: #333;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    border-bottom: 1px solid #ddd; /* add bottom border to non-header cells */
 }
-
-nav li a:hover
+tr.total-value
 {
-    background-color: #ddd;
-}
-
-  /* Style for the main content section */
-main
-{
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 800px;
-}
-
-  /* Style for the footer section */
-footer
-{
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
 }
