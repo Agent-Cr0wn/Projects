@@ -4,14 +4,17 @@ nav .navbar-brand
     font-size: xx-large;
 }
 
-/* Colors for brand */
-
 nav .navbar-brand .green
 {
-    color: #2e944b;
+    color: #00FF00;
 }
 
 .container-fluid
 {
     background-color: #171618;
+}
+
+.navbar-nav .nav-link
+{
+    color: #00FF00;
 }
